@@ -1,0 +1,29 @@
+from time import clock
+def LucasNumbersN(n):
+  L=[2,1]
+  if (n<0):
+    print("No trabajamos con cifras negativas")
+  elif (n==0):
+    print(L[0])
+  elif (n==1):
+    print(L)
+  else:
+    for i in range(1,n):
+      L.append(L[i-1]+L[i])
+    print(L)
+
+
+LucasNumbersN(10)
+def LucasNumbersT(n):
+  a = 0
+  b=0
+  i=1
+  L=[2,1]
+  while (a<n):
+    b = clock()
+    L.append(L[i-1]+L[i])
+    i=i+1
+    a=b
+  print(L)
+
+LucasNumbersT(30)
